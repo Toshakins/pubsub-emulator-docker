@@ -14,8 +14,9 @@ fi
 # Config gcloud project
 gcloud config set project ${PUBSUB_PROJECT_ID}
 
+echo "++++ Starting emulator"
 # Start emulator
-gcloud beta emulators pubsub start \
+yes | gcloud beta emulators pubsub start \
   --data-dir=/opt/data \
   --host-port=${PUBSUB_LISTEN_ADDRESS} \
   --quiet
